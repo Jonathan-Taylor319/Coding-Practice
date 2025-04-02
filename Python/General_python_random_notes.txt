@@ -1,0 +1,83 @@
+---declare a var -------
+number = 5
+text = 'hello world' have to use "" or '' for str
+
+some words are reserved and can't be used - for, while, true......etc
+
+---- access parts of a str ------
+print(text[6]) would show w in the console - pulls whatever is in 6th indice
+
+last characters of a str have an index of -1, second to last is -2 and so on
+print(text[-1]) would show d on the conosle - last letter of hello world
+
+access the bumber of characters in a string with a built in function
+len()
+
+print(len(text)) shows 11 - counts white spaces
+
+another build in method is type()
+
+print(type(text)) shows <class 'str'> on the console
+print(type(number)) shows <class 'int'> on console
+
+.find() is a method to find the position in the alphabet of each letter
+var.find()
+
+.lower() will trasform a string to lowercase
+var.lower()
+
+for loop in python ----
+for i in var:
+    do this.....
+
+-this will lowercase the str so it can index the letter
+for char in text.lower():
+    - make a var named index that is the location of the letter in the alphabet(declared but not here)
+    index = alphabet.find(char)
+    - prints the letter and then index of the letter next to it
+    print(char, index)
+
+str are immutable - can be re-declared 
+
+-- float vs integer division --- do not need to import math lib to do so
+    a // b = integer division (no float)
+    a / b = float division (remainders)
+
+    3 // 5 = 0 5 can't go in to 3 once
+    3 / 5 = .6
+
+--will loop through for the range / if n = 5 will loop 5 times - python starts at 0
+for i in range(i, n+1)
+    - usually print will go line by line but the end="" makes it print in one line
+    print(i, end="")
+
+.split() = will divide a list into a list depenedant on the sperator 
+no seperator means it will go by whitespace
+
+    text = "Python is fun"
+    words = text.split()  # Splits on whitespace by default.
+    print(words)  # Output: ['Python', 'is', 'fun']
+
+    data = "apple,banana,cherry"
+    fruits = data.split(",")  # Splits the string where commas are found.
+    print(fruits)  # Output: ['apple', 'banana', 'cherry']
+
+.join() will put together a list in to a single str
+
+    words = ['Python', 'is', 'fun']
+    sentence = " ".join(words)  # Joins the list elements with a space between them.
+    print(sentence)  # Output: "Python is fun"
+
+    words = ['apple', 'banana', 'cherry']
+    result = "-".join(words)
+    print(result)  # Output: "apple-banana-cherry"
+
+ ---------   can use both in conjunction -------------
+
+    text = "Python   is   fun"
+    normalized_text = " ".join(text.split())
+    print(normalized_text)  # Output: "Python is fun"
+
+    text.split() splits the original string into a list of words, ignoring extra spaces.
+
+    " ".join(...) then joins those words back together with a single space in between.
