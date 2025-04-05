@@ -411,3 +411,182 @@ nums = [1, 2, 3, 2, 4, 5, 1, 2, 3, 5, 6]
 
 # student_tracker(records)
 
+#======favorite drinks=========
+# drinks = [
+#     ("Alice", "tea"),
+#     ("Bob", "coffee"),
+#     ("Alice", "coffee"),
+#     ("Alice", "tea"),
+#     ("Bob", "tea"),
+#     ("Derek", "juice")
+# ]
+
+# def track_drinks(data):
+#     drink_log = {}
+
+#     for person, drink in data:
+#         inner = drink_log.get(person, {})
+#         inner[drink] = inner.get(drink, 0) + 1
+#         drink_log[person] = inner 
+    
+#     return drink_log
+
+# print(track_drinks(drinks))
+
+# def track_drinks(data):
+#     drink_log = {} 
+
+#     for person, drink in data:
+#         inner = drink_log.get(person, {})
+#         inner[drink] = inner.get(drink, 0) + 1
+#         drink_log[person] = inner
+#     return drink_log
+# print(track_drinks(drinks))
+
+# def drink_tracker(hat):
+#     person_drink = {}
+#     for cap, bill in hat:
+#         holder = person_drink.get(cap, {})
+#         holder[bill] = holder.get(bill, 0) + 1
+#         person_drink[cap] = holder
+#     return person_drink
+# print(drink_tracker(drinks))
+
+#define the function
+    #make an empty dict
+    #unpack and loop
+        #holder to declare an empty dict assinged to our key
+        #holder[nested item we want] = holder.get[what we want to increment, 0] + 1
+        #our dict[key] = [nested items]
+    #return nested items
+#printfunction(input))
+
+#def my_nested_counter(data):
+    #create an empty dictionary to hold results
+    #result = {}
+
+    #loop an empty dictionary to hold results
+    #for key, nested_key in data:
+
+        #holder: inner dictionary, defaults to {}
+        #holder = result.get(key, {})
+
+        #update the inner value using .ger()
+        #holder[nested_key] = holder.get(nested_key, 0) + 1
+
+        #assigned to the updated inner dict back to the outer key
+        #result[key] = holder
+
+    #Return the final nested dict
+    #return result
+
+# drinks = [
+#     ("Alice", "tea"),
+#     ("Bob", "coffee"),
+#     ("Alice", "coffee"),
+#     ("Alice", "tea"),
+#     ("Bob", "tea"),
+#     ("Derek", "juice")
+# ]
+
+# def drink_things(ummm):
+#     yerp = {}
+#     for a, b in ummm:
+#         c = yerp.get(a, {})
+#         c[b] = c.get(b, 0) + 1
+#         yerp[a] = c
+#     return yerp
+
+# print(drink_things(drinks))
+
+# #declare a function
+# def track_drinks(i):
+#     #create an empty dict
+#     total_drinks = {}
+#     #unpack and loop through the list
+#     for name, drank in i:
+#         #this is where we get funky / we need to make something to hold our drinks inside our key....
+#         #random var = our dict.get(key, {actual holder})
+#         hold_on = total_drinks.get(name, {})
+#         #now we need to pass in our drinks like a flat dict to the empty
+#         hold_on[drank] = hold_on.get(drank, 0) + 1
+#         #now we throw our stuff inside the actual dict like normal/flat? no....by just bringing the 2 together as the value of our key'd dict
+#         total_drinks[name] = hold_on
+#     #return our dict
+#     return total_drinks
+
+# print(track_drinks(drinks))
+
+# pet_data = [
+#     ("Alice", "cat"),
+#     ("Bob", "dog"),
+#     ("Alice", "dog"),
+#     ("Derek", "fish"),
+#     ("Alice", "cat"),
+#     ("Bob", "dog"),
+#     ("Eve", "cat"),
+#     ("Derek", "cat"),
+#     ("Eve", "dog"),
+#     ("Bob", "fish"),
+# ]
+
+# # 📋 Your Mission:
+# # Define a function: track_pets(data)
+# # Use two .get() calls (one nested)
+# # Do not use if key in dict anywhere
+# # No fancy libs, no defaultdict, just you and your loops
+
+# #define a function
+# def pet_tracker(i):
+#     #created a empyt dict
+#     owner_pet_list ={}
+#     #unpack my tuple and loop
+#     for owner, pet in i:
+#         #create a holder that will sit in an empty dict
+#         pet_list = owner_pet_list.get(owner, {})
+#         #fill the holder like a normal dict using nested data
+#         pet_list[pet] = pet_list.get(pet, 0) + 1
+#         #call upon the orig dict with our key and then have it = the holder
+#         owner_pet_list[owner] = pet_list
+#     #return our dict
+#     return owner_pet_list
+
+# print(pet_tracker(pet_data))
+
+# watch_data = [
+#     ("Alice", "Inception"),
+#     ("Bob", "The Matrix"),
+#     ("Alice", "Inception"),
+#     ("Derek", "Interstellar"),
+#     ("Alice", "The Matrix"),
+#     ("Bob", "Inception"),
+#     ("Eve", "The Matrix"),
+#     ("Derek", "Inception"),
+#     ("Eve", "Inception"),
+#     ("Bob", "The Matrix"),
+# ]
+
+# # 📋 Your Mission:
+# # track_movies(data)
+# # Two .get() calls — one outer, one inner
+# # No if key in dict
+# # Correctly re-assign the nested dict back into the outer one (DO NOT TACO BELL THIS TIME)
+
+# #define a function
+# def watched_movies(i):
+#     #declare an empty dict
+#     movie_dict = {}
+#     #unpack my tuple and loop
+#     for name, movie in i:
+#         #create a var to hold my empty dict
+#         movie_holder = movie_dict.get(name, {})
+#         #fill the empty dict with get
+#         movie_holder[movie] = movie_holder.get(movie, 0) + 1
+#         #pull in the holder to my keyed dict
+#         movie_dict[name] = movie_holder
+#     #return the stuff
+#     return movie_dict
+
+# print(watched_movies(watch_data))
+
+
