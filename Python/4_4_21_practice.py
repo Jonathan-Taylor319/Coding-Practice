@@ -283,3 +283,131 @@
 #     return vote_count
     
 # print(count_votes(votes))
+
+# 🧪 CHALLENGE: balance_check()
+# 🔢 Input:
+# data = [5, 3, 6, 2, 1, 7, 4, 4, 8, 0, 2, 2]
+# ✅ Expected Output:
+# Balanced group found at index 0: [5, 3, 6, 2]
+# Balanced group found at index 4: [1, 7, 4, 4]
+# Balanced group found at index 7: [4, 4, 8, 0]
+# You figure out:
+
+# A balanced group is a group of integers whose sum is evenly divisible by 4.
+
+# How many numbers to group
+
+# What check to perform
+
+# What data structure or access method to use
+# data = [5, 3, 6, 2, 1, 7, 4, 4, 8, 0, 2, 2]
+
+
+# #define a function
+# def b_4(mayo):
+#     #loop through the length of the data but make groups of 4
+#     for i in range(len(mayo) - 3):
+#         #forgot to add vars to hold each var and the combine to make a set
+#         a = mayo[i]
+#         b = mayo[i + 1]
+#         c = mayo[i + 2]
+#         d = mayo[i + 3]
+#         e = (a, b, c, d)
+#         # print(a)
+#         # print(e)
+#         #once we loop through need to see if the group of 4 is moduls 0 by 4
+#         if (a + b + c + d) % 4 == 0:
+#         # #create a print statemunt or return stating the index and the group-
+#             print (f"Balanced group found at index {i}: {e}")
+
+# b_4(data)
+
+# 🧪 DRILL: steady_rise()
+# 🔢 Input:
+nums = [1, 2, 3, 2, 4, 5, 1, 2, 3, 5, 6]
+# ✅ Expected Output:
+# Rising sequence found at index 0: (1, 2, 3)
+# Rising sequence found at index 4: (4, 5, 1)
+# Rising sequence found at index 7: (2, 3, 5)
+# You figure out:
+
+# What “rising” means
+
+# How many numbers to group
+
+# What to compare
+
+# When to print
+
+# You’re warmed up.
+# Now go loop and conquer.
+
+# def up_or_not(something):
+#     for i in range(len(something) - 2):
+#         a, b, c = something[i], something[i+1], something[i+2]
+#         if a < b and b < c:
+#             print(f"Rising sequence found at index {i}: ({a}, {b}, {c})")
+
+
+# up_or_not(nums)
+
+#----------back to get practice ----------
+
+# genres = [
+#     "sci-fi", "fantasy", "sci-fi", "romance", "fantasy",
+#     "fantasy", "sci-fi", "non-fiction", "romance", "romance",
+#     "sci-fi", "non-fiction"
+# ]
+
+# # 🔧 Your Task:
+# # Build a function count_genres(lst)
+
+# # Use .get() to count genre frequency
+
+# # No if in dict allowed
+
+# # No sorting, no list comprehension, no cheating
+
+# #define a function
+# def genre_counter(i):
+#     #declare a dict
+#     genre_count = {}
+#     #loop through the input
+#     for b in i:
+#         #count the genre and increment inside our dict
+#         genre_count[b] = genre_count.get(b, 0) + 1
+#     #print or return the count
+#     return genre_count
+
+# print(genre_counter(genres))
+
+# records = [
+#     ("Alice", "math"),
+#     ("Bob", "history"),
+#     ("Alice", "science"),
+#     ("Derek", "math"),
+#     ("Alice", "math"),
+#     ("Bob", "science"),
+#     ("Eve", "history"),
+#     ("Alice", "history"),
+#     ("Derek", "science"),
+#     ("Eve", "math"),
+#     ("Eve", "science"),
+#     ("Bob", "math")
+# ]
+
+# #create a function
+# def student_tracker(i):
+#     student_sched = {}
+#     #loop through input and unpack tuple-----omg that is nice
+#     for a, b in i:
+#         #confirm it is unpacked --- it is...need to go back, create empty dict and get ready for nesting of the nested >.<
+#         #print(a, b)
+#         #need to create our student name with an empty dict and then go in to it and populate.....
+#         student_sched[a] = student_sched.get(a, {})
+#         student_class[b] = student_class.get(b, 0) + 1
+#     return student_sched
+
+
+# student_tracker(records)
+
