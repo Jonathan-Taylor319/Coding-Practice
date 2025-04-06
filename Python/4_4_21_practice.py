@@ -589,4 +589,292 @@ nums = [1, 2, 3, 2, 4, 5, 1, 2, 3, 5, 6]
 
 # print(watched_movies(watch_data))
 
+    # in a dict .items() gives you
+    #     (key, value) pairs
 
+    # so:
+    
+    # my_dict = {'a': 1, 'b':2}
+    # for k, v in my_dict.items():
+    #     print(k, v)
+
+    # output = a 1
+    # #          b 2
+
+    # movie_data = {
+    #     'alice': {'Inception': 2, 'The Matrix': 1},
+    #     'Bob': {'The Matrix': 2, 'Inception': 1}
+    # }
+
+    # using .items() twice lets me .....
+
+    # #for key/ value in dict
+    # for person, movies in movie_data.items():
+    #     #for value and value inside dict
+    #     for movie, count in movies.items():
+    #         #give me the key / value /value?
+    #         print(person, movie, count)
+# test_data = {
+#     "Amy" : {"apple": 2, "banana": 1},
+#     "Tom" : {"banana": 3, "pear": 1},
+#     }
+
+# for name, fruits in test_data.items():
+#     for fruit, qty, in fruits.items():
+#         print(f"{name} has {qty} {fruit}(s)")
+
+# movie_data = {
+#     'Alice': {'Inception': 2, 'The Matrix': 1},
+#     'Bob': {'The Matrix': 2, 'Inception': 1}
+# }
+
+# for person, movies in movie_data.items():
+#     for movie, count in movies.items():
+#         print(person, movie, count)
+
+# #loop key, first value in dict.item():
+#     #loop first value, second value in 1st value.items()
+#         #print(all values we pulled)
+
+# 💪 WHAT YOU MUST DO:
+# Build a nested dict
+# Format: {user: {action: count}}
+# Return the nested dict from a function
+# No print inside that function. Return only.
+# Write another function to take the nested dict and print a clean summary line-by-line
+
+# logs = [
+#     ("Alice", "email"),
+#     ("Bob", "login"),
+#     ("Alice", "login"),
+#     ("Derek", "email"),
+#     ("Alice", "upload"),
+#     ("Bob", "email"),
+#     ("Derek", "login"),
+#     ("Alice", "login"),
+#     ("Eve", "upload")
+# ]
+
+# #def a function
+# def webpage_log(i):
+#     #create and empty dict
+#     user_logs = {}
+#     #loop through the dict with a key value pair to unpack the tuple
+#     for name, action in i:
+#         #use a holder var with the key and the dict.get(key {}) to create the empty inner dict
+#         logged = user_logs.get(name, {})
+#         #populate our inner var[value] = var.get(value, 0)+1
+#         logged[action] = logged.get(action, 0) + 1
+#         #use ourdict[key] = holder var
+#         user_logs[name] = logged
+#     #return dict
+#     return user_logs
+
+# # print(webpage_log(logs))
+# #create a var from these results
+# user_actions = webpage_log(logs)
+
+# def print_actions(o):
+#     for name, actions in o.items():
+#         for action, num in actions.items():
+#             print(name, action, num)
+#             if "login" in action and num > 1:
+#                 print(f"{name} has logged in more than once....she may be hacked")
+
+# print_actions(user_actions)
+
+# 🎯 Your Goals (unchanged):
+# Build a nested dict:
+# {player: {game: count}}
+# Return that dict from one function
+# Use a second function to print line-by-line:
+# BONUS: If they play a game 3+ times:
+# Whoa Alice really loves Final Fantasy!
+
+# game_logs = [
+#     ("Alice", "Final Fantasy"),
+#     ("Bob", "World of Warcraft"),
+#     ("Alice", "Aion"),
+#     ("Derek", "Final Fantasy"),
+#     ("Bob", "Aion"),
+#     ("Eve", "World of Warcraft"),
+#     ("Alice", "Final Fantasy"),
+#     ("Bob", "Final Fantasy"),
+#     ("Derek", "Aion"),
+#     ("Alice", "Final Fantasy"),
+#     ("Bob", "World of Warcraft"),
+#     ("Alice", "Aion"),
+# ]
+
+# #create a function
+# def game_tracker(i):
+#     #create an empty dict
+#     player_log = {}
+#     #loop through the dict and unpack tuple
+#     for player, game in i:
+#         #declare a holder for inner dict, game_logs(key, {})
+#         how_many_times = player_log.get(player, {})
+#         #holder[value] = holder.get(value, 0 ) + 1
+#         how_many_times[game] = how_many_times.get(game, 0) + 1
+#         #dict[key] = holder
+#         player_log[player] = how_many_times
+#     #return our dict
+#     return player_log
+
+# #check our 1st function
+# #print(game_tracker(game_logs)) - works
+
+# #create var to hold our return 
+# tracked_dict = game_tracker(game_logs)
+# print(tracked_dict)
+
+# #define a new function
+# def game_count(i):
+#     #key, 1st val in var.item():
+#     for name, games in i.items():
+#         #1st val, 2nd val in 1st.item():
+#         for game, count in games.items():
+#             #print results
+#             print(name, game, count)
+#         #bonus if game is played more than 3 times interpolate that {player} really loves {game}
+#             if count >= 3:
+#                 print(f"Woah {name} really loves {game}")
+
+# game_count(tracked_dict)
+
+# tame_logs = [
+#     ("Alice", "Slime"),
+#     ("Bob", "Dragon"),
+#     ("Alice", "Slime"),
+#     ("Derek", "Goblin"),
+#     ("Alice", "Dragon"),
+#     ("Bob", "Slime"),
+#     ("Derek", "Slime"),
+#     ("Alice", "Slime"),
+#     ("Bob", "Dragon"),
+#     ("Eve", "Goblin")
+# ]
+
+# #define a function
+# def monster_tamer(i):
+#     #declare an empty dict
+#     tamed = {}
+#     #unpack nd loop through tuples
+#     for tamer, monster in i:
+#         #created holder = dict key empty dict
+#         tamed_monster = tamed.get(tamer, {})
+#         #holder val = holder.get(val 0) + 1
+#         tamed_monster[monster] = tamed_monster.get(monster, 0) + 1
+#         #dict[key] = holder
+#         tamed[tamer] = tamed_monster
+#     #return dict
+#     return tamed
+
+# #create car to hold function(input)
+# who_got_what = monster_tamer(tame_logs)
+# # print(who_got_what)
+
+# #create another function to list/print
+# def printed_monster_tally(i):
+#     #for key, value in input.items()
+#     for tamer, monsters in i.items():
+#         #for value, value2 in values.items()
+#         for monster, count in monsters.items():
+#             #print (key, val1 , val2)
+#             print(tamer, monster, count)
+#             #bonus if count >= 2
+#             if count >= 2:
+#                 print(f"{tamer} really has it out for {monster}!")
+
+# printed_monster_tally(who_got_what)
+
+#forgot to call my print function to run and see results at first.....had it right initially lol....starting to get tired but there's no time left
+
+# # 🧠 Coding Assessment-Style Question:
+# # “Majority Element”
+# # ❓ Prompt:
+# # You are given a list of strings representing votes cast in an election.
+# # Your job is to write a function that:
+# # Returns a dictionary showing how many votes each candidate got
+# # Prints the name of the candidate who received the most votes
+
+# votes = [
+#     "Alice", "Bob", "Alice", "Derek", "Alice", "Bob",
+#     "Derek", "Derek", "Bob", "Alice", "Alice", "Derek", "Bob"
+# ]
+
+# #define a function
+# def vote_counter(i):
+#     #create a dict to hold our candidate and votes
+#     vote_count = {}
+#     #simple loop and count to track name and votes
+#     for name in i:
+#         vote_count[name] = vote_count.get(name, 0) + 1
+#     #return our dict
+#     return vote_count
+
+# #we want a var to hold our dict
+# apr_votes = vote_counter(votes)
+# # print(apr_votes)
+
+# #declare another funciton
+# def vote_counter_printer(i):
+#     #unpack and loop through our dict
+#     for name, votes in i.items():
+#         #not nested so no double loop:
+#         print(name, votes)
+#         #tried to print max(votes) and string interpolate the winner 
+#         # winner = votes.max()
+#         # print(f"{name} won with {votes} votes")
+#         #won't try to get fancy
+
+# vote_counter_printer(apr_votes)
+
+#what is list comprehension -
+    #a compact way to build a new list by looping through another one, applying logic as you go
+    # basic form :
+    #     [expression for item in iterable]
+    # it's just a one liner for a "for" loop that returns a list
+
+    # ex ----
+
+# nums = [1,2,3,4]
+# squares = [n**2 for n in nums] #n**2 is value to the 2nd power
+# print(squares)
+
+#same as above
+# squares = []
+# for n in nums:
+#     squares.append(n**2)
+    
+# print(squares)
+
+# #using with a condition
+# evens = [n for n in nums if n % 2 ==0]
+# print(evens)
+
+#transform and filter
+# doubled_odds = [n*2 for n in nums if n% 2 != 0]
+# print(doubled_odds)
+
+#burn in drills ------
+#basic transformation
+
+# nums = [1, 2, 3, 4, 5]
+# squared = [n ** 2 for n in nums]
+# print(squared)
+#var = looped item ** 2 for item in nums list
+# squared = [ n ** 2 for n in nums]
+# print(squared)
+# squared = [n ** 2 for n in nums]
+# print(squared)
+#create var to hold answer = [item ** 2 for item in nums list] - so why the brackets....going to be something to learn/think i what i can actually do inside these
+# so broken down
+#making a list - [] why it's in brackets
+# n**2 - what we want in the list
+#for n in nums - loop that feeds the values
+
+#copy drill 2 transformation and condition
+# names = ["ada", "bob", "alice", "eve"]
+# short_names = [name.upper() for name in names if len(name) <=3]
+# print(short_names)
