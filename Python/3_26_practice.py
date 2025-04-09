@@ -212,7 +212,8 @@
 # Write a function that scans through the list and tracks how often each triplet appears.
 # Return the triplet that appeared most frequently, and how many times it appeared.
 
-# words = ["apple", "banana", "carrot", "date", "elderberry"]
+# 
+
 
 # for i in range(len(words) -1):
 #     pair = (words[i], words[i+1])
