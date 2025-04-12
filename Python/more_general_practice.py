@@ -25,8 +25,10 @@
 
 #black hole in memory for loopingbackwards.....practice this and move on 
 
-word = "bananas"
+# word = "bananas"
 # for i in range(len(word)-1, -1, -1):
 #     print(word[i])
 
+# for something in range(len(word) -1, -1, -1):
+#     print(word[something])
 
