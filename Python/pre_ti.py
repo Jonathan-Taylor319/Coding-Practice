@@ -431,18 +431,44 @@ data = {"apple": 3, "banana": 5, "cherry": 2}
 # by_top_score = sorted(students, key=lambda x: x[1], reverse=True)
 # print(f"from highest to lowest score...{by_top_score}")
 
-students = [
-    ("Zoe", 92),
-    ("Amy", 99),
-    ("Jake", 85),
-    ("Leo", 91),
-    ("Maya", 78),
-    ("Ella", 88)
-]
+# students = [
+#     ("Zoe", 92),
+#     ("Amy", 99),
+#     ("Jake", 85),
+#     ("Leo", 91),
+#     ("Maya", 78),
+#     ("Ella", 88)
+# ]
 
-#we want to print out a top 3 score list
+# #we want to print out a top 3 score list
 
-#we want top 3 so sort by score and reverse = true?
-high_score = sorted(students, key=lambda x: x[1], reverse=True)
-print(high_score)
-top_3 = 
+# #we want top 3 so sort by score and reverse = true?
+# high_score = sorted(students, key=lambda x: x[1], reverse=True)
+# print(high_score)
+
+# coins = [
+#     ("Mario", 45),
+#     ("Luigi", 30),
+#     ("Peach", 50),
+#     ("Toad", 40),
+# ]
+# #so normal is sorted, to sort diff use sorted and then key and value for key...this works for tuples / lists
+
+# sorted_coins = sorted(coins, key=lambda x: x[1], reverse=True)
+# print(sorted_coins)
+
+# nums = [12, 20, 30, 40, 50, 60]
+# # [start:stop(notincluded)]
+# print(nums[2:4]) 
+
+# text = "gravity"
+# #start at beginning and stop at index 3(not included)
+# print(text[0:3])
+# #it goes backwards and looks like our start stop step but im sure not the same
+# print(text[::-1])
+
+# text = "abcdef"
+# print(text[::])
+# print(text[::1])
+
+
