@@ -433,13 +433,118 @@
 # for i, (name, score, subject, grade) in enumerate(exam_data, 1):
 #     print(i, name, score, subject, grade)
 
+# # drill 1 - 
+# people = [("zoe", 88), ("liam", 95), ("Amy", 91)]
+# #sort by score 
+# sorted_people = sorted(people, key=lambda i: i[1], reverse=True)
+# #need to list with enumerate
+# for i, (name, score) in enumerate(sorted_people, 1):
+#       print(f"{i}. {name} scored {score}")
+
+# sorted_names = sorted(people, key=lambda j: j[0])
+# for i, (name, score) in enumerate(sorted_names, 1):
+#       print(f"{i}. {name} - {score}")
+
+# books = [
+#     ("Dune", 9.2),
+#     ("1984", 9.5),
+#     ("Foundation", 8.9),
+#     ("Neuromancer", 9.0),
+# ]
+
+# sorted_books = sorted(books, key=lambda i: i[1], reverse=True)
+# for i, (name, score) in enumerate(sorted_books, 1):
+#       print(f"{i}. book: {name} - score: {score} ")
+
+# students = [
+#     ("Alice", 95, 300),
+#     ("Bob", 92, 250),
+#     ("Charlie", 95, 280),
+#     ("Derek", 90, 310),
+#     ("Eve", 95, 270)
+# ]
+
+# #-1[1] go backwords sorting / i[2] ascend by time
+# sorted_score = sorted(students, key=lambda i: (-i[1], i[2]))
+# # print(sorted_score)
+# for i, (name, score, time) in enumerate(sorted_score, 1):
+#       print(f"{i}, {name} - {score}")
+      
+# students = [
+#     ("Alice", 92),
+#     ("Bob", 85),
+#     ("Charlie", 95),
+#     ("Derek", 88),
+#     ("Eve", 91),
+# ]
+
+# for name, score in students:
+#       if score > 90:
+#             print(name, score)
+
+# high_scores = [(name, score) for name, score in students if score > 90]
+# print(high_scores)
+
+# runners = [
+#     ("Zoe", 320),
+#     ("Liam", 290),
+#     ("Amy", 310),
+#     ("Jake", 275),
+#     ("Nina", 340),
+#     ("Tom", 299)
+# ]
+
+# for name, time in runners:
+#       if time < 300:
+#             print(name, time)
+
+# under_3 = [(name, time) for name, time in runners if time < 300]
+# print(under_3)
+# for name, time in under_3:
+#       print(f"{name} ran the course in {time}")
+
+# agents = [
+#     ("Alice", "ShadowFox", 5),
+#     ("Bob", "NightOwl", 2),
+#     ("Charlie", "RedWolf", 4),
+#     ("Derek", "GhostTiger", 3),
+#     ("Eve", "SteelFalcon", 5),
+# ]
+# #filter agents with a clearance of level 4 or higher, return a list of their codenames
+# #print in Codename authorized: [CODENAME]
+
+# for name, code_name, level in agents:
+#       if level >= 4:
+#             print(f"Codename authorized: [{code_name}]")
+
+# # or ----
+# authorized_agents = [(name, code_name, level) for name, code_name, level in agents if level >= 4]
+# for a, b, c in authorized_agents:
+#       print(f"Codename authorized: [{b}]")
+
+# nums = [1, 1, 1, 2, 2, 3]
+# k = 2
+# ✅ Expected: [1, 2]
+nums = [4, 1, 1, 2, 2, 3, 3, 3]
+# k = 1
+# ✅ Expected: [3]
+
+#create a function
+def num_counter(x):
+      #empty dict to hold the count of each number found
+      num_counter = {}
+      #need to fill our dict....almost forgot to loop :P
+      for i in nums:
+            num_counter[i] = num_counter.get(i, 0) +1
+      #did not work lol
+      #sorted_num = sorted(num_counter, key=lambda i: -i[1])
+      print(sorted_num)
+      for num, count in num_counter.items():
+            
 
 
+      
+num_counter(nums)
 
 
-
-# 🟦 DICTS
-# Build a count dict with .get() from a list of fruits.
-# Use .items() and max(..., key=lambda item: item[1]) to get most common.
-# Print keys, values, items.
 
