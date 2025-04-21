@@ -522,29 +522,50 @@
 # for a, b, c in authorized_agents:
 #       print(f"Codename authorized: [{b}]")
 
-# nums = [1, 1, 1, 2, 2, 3]
-# k = 2
-# ✅ Expected: [1, 2]
-nums = [4, 1, 1, 2, 2, 3, 3, 3]
-# k = 1
-# ✅ Expected: [3]
+# # nums = [1, 1, 1, 2, 2, 3]
+# # k = 2
+# # ✅ Expected: [1, 2]
+# nums = [4, 1, 1, 2, 2, 3, 3, 3]
+# # k = 1
+# # ✅ Expected: [3]
 
-#create a function
-def num_counter(x):
-      #empty dict to hold the count of each number found
-      num_counter = {}
-      #need to fill our dict....almost forgot to loop :P
-      for i in nums:
-            num_counter[i] = num_counter.get(i, 0) +1
-      #did not work lol
-      #sorted_num = sorted(num_counter, key=lambda i: -i[1])
-      print(sorted_num)
-      for num, count in num_counter.items():
+# #create a function
+# def num_counter(x):
+#       #empty dict to hold the count of each number found
+#       num_counter = {}
+#       #need to fill our dict....almost forgot to loop :P
+#       for i in nums:
+#             num_counter[i] = num_counter.get(i, 0) +1
+#       #did not work lol
+#       #sorted_num = sorted(num_counter, key=lambda i: -i[1])
+#       print(sorted_num)
+#       for num, count in num_counter.items():
             
 
+nums = [4, 1, 1, 2, 2, 3, 3, 3]
+# ✅ Expected Output: [3]
 
-      
-num_counter(nums)
+# nums = [4, 1, 1, 2, 2, 3, 3]
+# # ✅ Expected Output: [1, 2, 3]
 
+# return a list of number/numbers that appear most frequently if there's a tie have them ascending
+#input will be int
+#will need to sort if they are worried about ascending
 
+#create a function
+def dupe_tracker(x):
+      #we could create a dict and track how many of each
+      num_count = {}
+      #we need to loop
+      for i in x:
+            #we would then havet sort our results
+            num_count[i] = num_count.get(i, 0) +1
+            #return our results
+      print(num_count)
+      for number, count in num_count.items():
+            counted_number = [number, count]
+            print(counted_number)
+            for count in range(len(counted_number), -2):
+                  print("this is the count", count)
 
+dupe_tracker(nums)
