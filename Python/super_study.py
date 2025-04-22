@@ -542,30 +542,139 @@
 #       for num, count in num_counter.items():
             
 
-nums = [4, 1, 1, 2, 2, 3, 3, 3]
-# ✅ Expected Output: [3]
+# nums = [4, 1, 1, 2, 2, 3, 3, 3]
+# # ✅ Expected Output: [3]
 
-# nums = [4, 1, 1, 2, 2, 3, 3]
-# # ✅ Expected Output: [1, 2, 3]
+# # nums = [4, 1, 1, 2, 2, 3, 3]
+# # # ✅ Expected Output: [1, 2, 3]
 
-# return a list of number/numbers that appear most frequently if there's a tie have them ascending
-#input will be int
-#will need to sort if they are worried about ascending
+# # return a list of number/numbers that appear most frequently if there's a tie have them ascending
+# #input will be int
+# #will need to sort if they are worried about ascending
 
-#create a function
-def dupe_tracker(x):
-      #we could create a dict and track how many of each
-      num_count = {}
-      #we need to loop
-      for i in x:
-            #we would then havet sort our results
-            num_count[i] = num_count.get(i, 0) +1
-            #return our results
-      print(num_count)
-      for number, count in num_count.items():
-            counted_number = [number, count]
-            print(counted_number)
-            for count in range(len(counted_number), -2):
-                  print("this is the count", count)
+# #create a function
+# def dupe_tracker(x):
+#       #we could create a dict and track how many of each
+#       num_count = {}
+#       #we need to loop
+#       for i in x:
+#             #we would then havet sort our results
+#             num_count[i] = num_count.get(i, 0) +1
+#             #return our results
+#       print(num_count)
+#       for number, count in num_count.items():
+#             counted_number = [number, count]
+#             print(counted_number)
+#             for count in range(len(counted_number), -2):
+#                   print("this is the count", count)
 
-dupe_tracker(nums)
+# dupe_tracker(nums)
+
+# words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+# # 🧠 Task: Count the words and print the one used most often.
+# # ✅ Expected Output: "apple"
+
+# #create a function
+# def word_counter(x):
+#       #create an empty dict to hold our word count
+#       words_used = {}
+#       #loop through and count our words
+#       for i in x:
+#             #count the words
+#             words_used[i] = words_used.get(i, 0) +1
+#       #print to see our dict
+#       #print(words_used)
+#       #unpack
+#       for name, count in words_used.items():
+#             #not sure if apple comes first because of count or name being apple will sort by count
+#             words_used = sorted(count, key=lambda i: i[1], reverse=True)
+#       print(words_used)
+
+# word_counter(words)
+
+# You are given a list of integers. 
+# Return the k most frequent elements in descending frequency order. 
+# If there’s a tie, return the smaller number first.
+
+# expected output:
+# [3, 1]
+# 3 appears 3 times
+# 1 and 2 both appear 2 times → pick 1 because it's smaller
+
+# nums = [4, 1, 1, 2, 2, 3, 3, 3]
+# k = 2
+
+# #creating a function
+# def num_counter(x, y):
+#       #create a empty dict to hold our count
+#       num_count = {}
+#       #need to loop and count
+#       for i in x:
+#             #fill our dict
+#             num_count[i] = num_count.get(i, 0) +1
+#       #check our dict
+#       #print(num_count)
+#       #sort the dict by highest to lowest 
+#       sorted_count = sorted(num_count.items(), key=lambda i: -i[1])
+#       #check we are sorted
+#       #print(sorted_count)
+#       #need to return by k - i messed this part up will break it down and practice and keep learning
+#       top_k = [num for num, count in sorted_count[:y]]
+#       return top_k
+# result = num_counter(nums, k)
+# print(result)
+
+      #so in the created top_k var 
+      #sorted_count[:y] 
+      # - slices the y item from the sorted_count list meaning the 3, the 1, 2, 4
+      #if i were to use y=2, i would take the the first two most frequent, but we are using are passed in arg for the value
+      #for num, count in ......
+      #each element in sorted_count is a tuple....this merley unpacks the tuple
+      #[num for.......]
+      #you're created a new list containg just the num part of each [num, count] pair
+      #not keeping the counts. just the top k- numbers
+
+# Given an array of integers, 
+# return True if the number of occurrences of each value is unique. 
+# Otherwise, return False.
+
+# unique_occurrences([1, 2, 2, 1, 1, 3])
+# # ✅ Output: True
+# # Explanation: 1 occurs 3 times, 2 occurs 2 times, 3 occurs 1 time → [3,2,1] → unique
+
+# unique_occurrences([1, 2])
+# # ✅ Output: False
+# # Explanation: 1 occurs 1 time, 2 occurs 1 time → [1,1] → not unique
+
+# unique_occurences = ([1, 3, 4, 2, 1, 3, 3, 4, 4, 4])
+# unique_occurences_1 = ([1, 2, 3, 4, 5, 6, 6, 7])
+
+# #need to create a function
+# def unique_or_not(x):
+#       #need to create an empty dict to hold our count
+#       num_tracker = {}
+#       #need to loop
+#       for i in x:
+#             #need to fill our dict while looping
+#             num_tracker[i] = num_tracker.get(i, 0) +1
+#       #print to check our dict
+#       #print(num_tracker)
+#       #need to sort the dict by using sorted(dict.items())
+#       sorted_by_count = sorted(num_tracker.items(), key=lambda i: i[1])
+#       #print and check our sorted list - 
+#       # print(sorted_by_count)
+#       #do some kind of logic check/conditional if duplicates in values = return false if no dupes = return true
+#       # for num, count in sorted_by_count:
+#       #       if count[0] == count[1]:
+#       #             return False
+#       #       else:
+#       #             return True
+#       #get all the counts and check if their lengths match
+#       #looks like we create a new var - built in list function and we use just our values from our dict hench the .values()
+#       values = list(num_tracker.values())
+#       #here we check the len of values and the leng of set values? will return a true or false
+#       return len(values) == len(set(values))
+
+# print(unique_or_not(unique_occurences))
+# print(unique_or_not(unique_occurences_1))
