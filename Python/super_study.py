@@ -678,3 +678,151 @@
 
 # print(unique_or_not(unique_occurences))
 # print(unique_or_not(unique_occurences_1))
+
+#-------------    brain burn in for built in functions    ------
+# list() = converts anything in to a list, list() = converts anything in to a list
+# list() = converts anything in to a list, list() = converts anything in to a list
+# list() = converts anything in to a list, list() = converts anything in to a list
+# list() = converts anything in to a list, list() = converts anything in to a list
+# list() = converts anything in to a list, list() = converts anything in to a list
+
+# set() = removes duplicates and makes un-ordered unique collection
+# set() = removes duplicates and makes un-ordered unique collection
+# set() = removes duplicates and makes un-ordered unique collection
+# set() = removes duplicates and makes un-ordered unique collection
+# set() = removes duplicates and makes un-ordered unique collection
+
+# sorted() = returns a sorted version, sorted() = returns a sorted version
+# sorted() = returns a sorted version, sorted() = returns a sorted version
+# sorted() = returns a sorted version, sorted() = returns a sorted version
+# sorted() = returns a sorted version, sorted() = returns a sorted version
+# sorted() = returns a sorted version, sorted() = returns a sorted version
+
+# dict() = builds a dict - have not used yet
+# dict() = builds a dict - have not used yet
+# dict() = builds a dict - have not used yet
+# dict() = builds a dict - have not used yet
+# dict() = build a dict - have not used yet
+
+# str()/int() type conversion - str()/int() type conversion
+# str()/int() type conversion - str()/int() type conversion
+# str()/int() type conversion - str()/int() type conversion
+# str()/int() type conversion - str()/int() type conversion
+# str()/int() type conversion - str()/int() type conversion
+
+# list() ----------------------
+# range(5)          ➡️  list(range(5))  ➡️  [0, 1, 2, 3, 4]
+# dict.keys()       ➡️  list(dict.keys())  ➡️  ["key1", "key2"]
+# set("hello")      ➡️  list(set("hello"))  ➡️  ['h', 'e', 'l', 'o']
+
+
+# set() ---------------------
+# set_a & set_b  # intersection
+# set_a | set_b  # union
+# set_a - set_b  # difference
+
+# if x in some_set:  # way faster than in a list
+
+# sorted() --------------------
+# sorted(x)           # returns a new list, original is untouched
+# sorted(x, reverse=True)  # descending
+# ✅ You can sort tuples and dict .items() by value with key= tricks.
+
+# dict()----------------------------
+# dict([("a", 1), ("b", 2)])  # {'a': 1, 'b': 2}
+# tracker = {}
+# tracker[key] = tracker.get(key, 0) + 1
+
+# str()/int()---------------------------------
+# str(42)     # "42"
+# int("42")   # 42
+# But int("4.5") will explode 🔥 because it’s not a clean int.
+
+# logs = [
+#     ("Alice", "upload"),
+#     ("Bob", "comment"),
+#     ("Alice", "upload"),
+#     ("Bob", "upload"),
+#     ("Charlie", "like"),
+#     ("Alice", "upload"),
+#     ("Charlie", "upload"),
+#     ("Alice", "comment"),
+#     ("Charlie", "upload"),
+#     ("Charlie", "make Chocolate"),
+# ]
+# # 🧠 Your Mission:
+# # Count how many total actions each user performed.
+# # Output: {"Alice": 4, "Bob": 2, "Charlie": 2}
+# # Find the user(s) with the most actions.
+# # Output: ["Alice"]
+# # If there's a tie, return all users who tied.
+# # (e.g., if Bob and Charlie both had 4 actions)
+# # 🚫 Rules:
+# # No collections.Counter
+# # Yes to .get() and .items()
+# # Try to write it in a function
+# # Bonus: Print the top user(s) in a friendly way:
+# # "Most active user(s): Alice"
+
+# #create a function
+# def user_actions(x):
+#       #create a dict to count name / actions
+#       action_count = {}
+#       #loop
+#       #had to put name, action in x if i just had name it would separate each action - good to know
+#       for name, action in x:
+#             #fill our dict
+#             action_count[name] = action_count.get(name, 0) +1
+#       #print(action_count)
+#       #sort our dict info as tuples
+#       # user_action_count = sorted(action_count.items(), key=lambda i: -i[1])
+#       #return our new sorted info
+#       return action_count
+
+# def most_active_users(y):
+#       #step 1 - get max action count - max(dict.values())
+#       most_actions = max(y.values())
+#       # step 2: collect everyone who has that count
+#       top_users = []
+#       for user, count in y.items():
+#             if count == most_actions:
+#                   top_users.append(user)
+            
+
+#       #top_users = [user for user, count in y.items() if count == most_actions]
+#       return top_users
+
+# action_count = user_actions(logs)
+# winners = most_active_users(action_count)
+# print(f"Most active user(s):", ", ".join(winners))
+      
+#top_users = [user for user, count in y.items() if count == most_actions]
+#means loop through y.items() - the .items() gives user/count as tuples - for each pair only grab user if their count == most_actions
+#it's list comprehension but a loop in disguise 
+
+votes = [
+    ("Alice", "banana"),
+    ("Bob", "apple"),
+    ("Alice", "banana"),
+    ("Charlie", "banana"),
+    ("Alice", "apple"),
+    ("Bob", "banana"),
+    ("Charlie", "apple"),
+    ("Charlie", "banana"),
+]
+
+def fruit_count(x):
+      fruit_votes = {}
+      for name, fruit in x:
+            fruit_votes[fruit] = fruit_votes.get(fruit, 0) + 1
+      return fruit_votes
+
+counted_votes = fruit_count(votes)
+#print(counted_votes)
+def vote_results(y):
+      for name and count in y.items():
+            top_voted = max(y.values(), count[0])
+      return top_voted
+
+top_fruit = vote_results(counted_votes)
+print(f"Top fruit: {fruit}")
