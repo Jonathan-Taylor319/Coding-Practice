@@ -800,29 +800,233 @@
 #means loop through y.items() - the .items() gives user/count as tuples - for each pair only grab user if their count == most_actions
 #it's list comprehension but a loop in disguise 
 
-votes = [
-    ("Alice", "banana"),
-    ("Bob", "apple"),
-    ("Alice", "banana"),
-    ("Charlie", "banana"),
-    ("Alice", "apple"),
-    ("Bob", "banana"),
-    ("Charlie", "apple"),
-    ("Charlie", "banana"),
-]
+# votes = [
+#     ("Alice", "banana"),
+#     ("Bob", "apple"),
+#     ("Alice", "banana"),
+#     ("Charlie", "banana"),
+#     ("Alice", "apple"),
+#     ("Bob", "banana"),
+#     ("Charlie", "apple"),
+#     ("Charlie", "banana"),
+# ]
 
-def fruit_count(x):
-      fruit_votes = {}
-      for name, fruit in x:
-            fruit_votes[fruit] = fruit_votes.get(fruit, 0) + 1
-      return fruit_votes
+# def fruit_count(x):
+#       fruit_votes = {}
+#       for name, fruit in x:
+#             fruit_votes[fruit] = fruit_votes.get(fruit, 0) + 1
+#       return fruit_votes
 
-counted_votes = fruit_count(votes)
-#print(counted_votes)
-def vote_results(y):
-      for name and count in y.items():
-            top_voted = max(y.values(), count[0])
-      return top_voted
+# counted_votes = fruit_count(votes)
+# #print(counted_votes)
+# def vote_results(y):
+#       for name and count in y.items():
+#             top_voted = max(y.values(), count[0])
+#       return top_voted
 
-top_fruit = vote_results(counted_votes)
-print(f"Top fruit: {fruit}")
+# top_fruit = vote_results(counted_votes)
+# print(f"Top fruit: {fruit}")
+
+# word = "abracadabra"
+# # Count how many times each letter appears.
+# # ✅ Expected: {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
+
+# letter_count = {}
+
+# for letter in word:
+#       letter_count[letter] = letter_count.get(letter, 0) +1
+# print(letter_count)
+
+# scores = [("Alice", 88), ("Bob", 94), ("Zoe", 91)]
+# # Print the name of the person with the highest score.
+# # ✅ Expected: Bob
+# #all we needed to do was take scores - use built in max - and then print top[0]
+# top = max(scores, key=lambda x:x[1])
+# print(top[0])
+
+# nums = [1, 2, 2, 3, 4, 4, 5]
+# # Convert to a list of unique values (any order is fine).
+# # ✅ Expected: [1, 2, 3, 4, 5]
+# removed_dupes = set(nums)
+# print(removed_dupes)
+# #if we want to make it a list as well
+# print(list(set(nums)))
+
+# letters = ["a", "b", "c", "d", "e", "f", "g"]
+# # Grab the middle 3 letters.
+# # ✅ Expected: ['c', 'd', 'e']
+# new_letters = letters[2:5]
+# print(new_letters)
+
+# students = [("Amy", 92), ("Liam", 85), ("Zoe", 95)]
+# # Sort by score, descending.
+# # ✅ Expected: Zoe, Amy, Liam
+# sorted_students = sorted(students, key=lambda i: -i[1])
+# for name, score in sorted_students:
+#       print(name)
+
+# nums = [1, 2, 2, 3, 4, 4, 5]
+# # 👉 Expected: [1, 2, 3, 4, 5] (order doesn't matter)
+# unique = list(set(nums))
+# print(unique)
+
+# word = "abracadabra"
+# # 👉 Expected: {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
+# letter_count = {}
+# for char in word:
+#     letter_count[char] = letter_count.get(char, 0) +1
+# print(letter_count)
+
+# students = [("Amy", 92), ("Liam", 85), ("Zoe", 95)]
+# # 👉 Expected: ("Zoe", 95)
+# top_student = sorted(students, key=lambda i:-i[1])
+# print(top_student[0])
+
+# scores = [("Alice", 88), ("Bob", 94), ("Zoe", 91)]
+# # 👉 Expected: Bob, Zoe, Alice
+# sorted_scores = sorted(scores, key=lambda i: -i[1])
+# print(sorted_scores)
+
+# letters = ["a", "b", "c", "d", "e", "f", "g"]
+# # 👉 Expected: ['c', 'd', 'e']
+# middle = letters[2:5]
+# print(middle)
+
+# logs = [
+#     ("Alice", "upload"),
+#     ("Bob", "comment"),
+#     ("Alice", "upload"),
+#     ("Bob", "upload"),
+#     ("Charlie", "like"),
+#     ("Alice", "upload"),
+#     ("Charlie", "upload"),
+#     ("Alice", "comment"),
+#     ("Charlie", "upload"),
+#     ("Charlie", "upload"),
+# ]
+
+# # #create a function
+# # def log_tracker(x):
+# #       #create an empty dict
+# #       user_action = {}
+# #       #then we need to loop
+# #       for name, action in x:
+# #             #need to populate our dict
+# #             user_action[name] = user_action.get(name, 0) +1
+# #             #return our dict
+# #       return user_action
+
+# # action_count = log_tracker(logs)
+
+# # def most_used(action_count):
+# #       most = max(action_count.values())
+# #       top_users = [user for user, count in action_count.items() if count == most]
+# #       return top_users
+
+# # winners = most_used(action_count)
+# # print("most acitve user(s):", ", ".join(winners))
+
+# counts = {'Alice': 4, 'Bob': 2, 'Charlie': 5, 'Derek': 5}
+
+# # Your job:
+# # 1. Get the highest value
+# # 2. Return all names with that value
+
+# def top_performers(d):
+#     top_users = max(counts.values())
+#     winners = [name for name, count in d.items() if count == top_users]
+#     return winners
+
+# print(top_performers(counts))  # ✅ Should return ['Charlie', 'Derek']
+
+# words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+# # Step 1: Count occurrences
+# count = {}
+# for word in words:
+#     count[word] = count.get(word, 0) + 1
+
+# # Step 2: Find the most common
+# top_count = max(count.values())
+# most_common = [w for w, c in count.items() if c == top_count]
+# print("Most common:", most_common)
+
+# votes = ["Alice", "Bob", "Alice", "Derek", "Alice", "Bob", "Derek", "Derek", "Bob", "Alice"]
+
+# vote_count = {} 
+# for name in votes:
+#       vote_count[name] = vote_count.get(name, 0) +1
+
+# top_votes = max(vote_count.values())
+# most_votes = [name for name, count in vote_count.items() if count == top_votes]
+# print(most_votes)
+
+# nums = [4, 1, 2, 1, 2]
+# # ✅ Expected Output: 4
+# #write a function called find_single(nums)
+# def find_single(nums):
+#       num_count = {}
+#       for i in nums:
+#             num_count[i] = num_count.get(i, 0) +1
+#       for num, count in num_count.items():
+#             if count == 1:
+#                   return num
+# print(find_single(nums))
+
+# ❓ Prompt:
+# Given a string, return the index of the first character that is unique (appears only once).
+# If there is no unique character, return -1.
+
+# ✅ Example:
+# Input: "leetcode"
+# Output: 0  (because 'l' is the first unique character)
+
+# Input: "loveleetcode"
+# Output: 2  (because 'v' is the first unique character)
+
+# Input: "aabb"
+# Output: -1
+
+# def first_unique(s):
+#     char_count = {}
+#     for char in s:
+#         char_count[char] = char_count.get(char, 0) + 1
+
+#     for idx, char in enumerate(s):
+#         if char_count[char] == 1:
+#             return idx
+#     return -1
+
+# nums1 = [1, 2, 2, 1]
+# nums2 = [2, 2]
+
+#return a list of unique elements 
+
+# def in_both(x, y):
+#       set1 = set(x)
+#       set2 = set(y)
+#       return list(set1 & set2)
+
+# print(in_both(nums1, nums2))
+# # Given a list of integers, return True if any value appears at least twice.
+
+# nums1 = [1, 2, 3, 4]        # Expected: False
+# nums2 = [1, 2, 3, 1]        # Expected: True
+
+# def has_duplicates(nums):
+#     # Your magic goes here
+#     for digit in nums:
+#       if digit[0] == digit[1]:
+#             return true
+      
+
+votes = ["Alice", "Bob", "Alice", "Derek", "Alice", "Bob", "Derek", "Derek", "Bob", "Alice"]
+
+# ✅ Expected: "Alice"
+vote_count = {} 
+for name in votes:
+      vote_count[name] = vote_count.get(name, 0) +1
+top_votes = max(vote_count.items(), key=lambda i: -i[1])
+winner = [name for name, votes in vote_count.items() == top_votes]
+
+print(winner)
