@@ -1020,13 +1020,13 @@
 #             return true
       
 
-votes = ["Alice", "Bob", "Alice", "Derek", "Alice", "Bob", "Derek", "Derek", "Bob", "Alice"]
+# votes = ["Alice", "Bob", "Alice", "Derek", "Alice", "Bob", "Derek", "Derek", "Bob", "Alice"]
 
-# ✅ Expected: "Alice"
-vote_count = {} 
-for name in votes:
-      vote_count[name] = vote_count.get(name, 0) +1
-top_votes = max(vote_count.items(), key=lambda i: -i[1])
-winner = [name for name, votes in vote_count.items() == top_votes]
+# # ✅ Expected: "Alice"
+# vote_count = {} 
+# for name in votes:
+#       vote_count[name] = vote_count.get(name, 0) +1
+# top_votes = max(vote_count.items(), key=lambda i: -i[1])
+# winner = [name for name, votes in vote_count.items() == top_votes]
 
-print(winner)
+# print(winner)
