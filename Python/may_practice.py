@@ -120,40 +120,65 @@
 
 # 👉 Try writing this with a helper function to detect primes.
 
-# define a function
-def isprime(num):
-    # see if prime number
-    if num < 2:
-        return False
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+# # define a function
+# def isprime(num):
+#     # see if prime number
+#     if num < 2:
+#         return False
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num % i == 0:
+#             return False
+#     return True
 
 
 
-# define a function
-def fizz_buzz(num):
-#     count from 1 to 50
-    while num < 51:
-#     use helper function to check for prime
-        if isprime(num) == True:
-            print("Prime")
-            num += 1
-#     check for multiples of 3 and 5
-        elif num % 15 == 0:
-            print("FizzBuzz")
-            num += 1
-#     check for multiples of 5
-        elif num % 5 == 0:
-            print("Buzz")
-            num += 1
-#     check for multiples of 3
-        elif num % 3 == 0:
-            print("Fizz")
-            num += 1
-        else:
-            print(num)
-            num += 1
+# # define a function
+# def fizz_buzz(num):
+# #     count from 1 to 50
+#     while num < 51:
+# #     use helper function to check for prime
+#         if isprime(num) == True:
+#             print("Prime")
+#             num += 1
+# #     check for multiples of 3 and 5
+#         elif num % 15 == 0:
+#             print("FizzBuzz")
+#             num += 1
+# #     check for multiples of 5
+#         elif num % 5 == 0:
+#             print("Buzz")
+#             num += 1
+# #     check for multiples of 3
+#         elif num % 3 == 0:
+#             print("Fizz")
+#             num += 1
+#         else:
+#             print(num)
+#             num += 1
 
-fizz_buzz(1)
+# fizz_buzz(1)
+
+# Write a function word_frequency(text) that:
+# Accepts a string
+# Returns a dictionary with word counts (ignore case and punctuation)
+# # Example:
+# word_frequency("Hello hello! How are you, hello?")
+# # Output: {'hello': 3, 'how': 1, 'are': 1, 'you': 1}
+
+# def word_counter(sample):
+#     counted_words = {}
+#     for word in sample.split():
+#         counted_words[word] = counted_words.get(word , 0) +1
+#     return counted_words
+
+# print(word_counter("this is my sample because this will fill this dictionary ?"))
+
+# 🔄 Challenge 4: List Slicer
+# Write a function reverse_chunks(lst, size) that:
+# Splits the list into chunks of length size
+# Reverses each chunk
+# Returns a new list made up of those reversed chunks
+
+# reverse_chunks([1, 2, 3, 4, 5, 6, 7, 8], 3)
+# → [3, 2, 1, 6, 5, 4, 8, 7]
+
