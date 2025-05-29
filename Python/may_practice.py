@@ -106,3 +106,54 @@
 
 # #start at 6 / stop before 20(1) / count every other backwords(-2)
 # print(nums[6:1:-2])
+
+# 🔁 1. Looping Logic: FizzBuzz with a Twist
+# Print numbers from 1 to 50, but:
+
+# For multiples of 3, print "Fizz"
+
+# For multiples of 5, print "Buzz"
+
+# For multiples of both 3 and 5, print "FizzBuzz"
+
+# For prime numbers, print "Prime" instead
+
+# 👉 Try writing this with a helper function to detect primes.
+
+# define a function
+def isprime(num):
+    # see if prime number
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+
+# define a function
+def fizz_buzz(num):
+#     count from 1 to 50
+    while num < 51:
+#     use helper function to check for prime
+        if isprime(num) == True:
+            print("Prime")
+            num += 1
+#     check for multiples of 3 and 5
+        elif num % 15 == 0:
+            print("FizzBuzz")
+            num += 1
+#     check for multiples of 5
+        elif num % 5 == 0:
+            print("Buzz")
+            num += 1
+#     check for multiples of 3
+        elif num % 3 == 0:
+            print("Fizz")
+            num += 1
+        else:
+            print(num)
+            num += 1
+
+fizz_buzz(1)
