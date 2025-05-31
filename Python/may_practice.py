@@ -182,3 +182,32 @@
 # reverse_chunks([1, 2, 3, 4, 5, 6, 7, 8], 3)
 # → [3, 2, 1, 6, 5, 4, 8, 7]
 
+# Write a function that takes a list of numbers and returns a dictionary with the count of even and odd numbers.
+
+# def even_or_odd_counter(num):
+#     even_count = 0
+#     odd_count = 0
+#     for numbers in num:
+#         if numbers % 2 == 0:
+#             even_count += 1
+#         else:
+#             odd_count += 1
+#     print(f'Even: {even_count}, Odd: {odd_count}')
+
+
+# trial_1 = (1, 2, 4, 5, 7, 8, 12, 14, 15)
+# even_or_odd_counter(trial_1)
+
+# Write a function that takes a sentence and returns a dictionary showing how many times each word appears.
+
+# sent = "I love learning Python because I love solving problems"
+
+# def word_counter(text):
+#     counted_words = {}
+#     for word in text.lower().split():
+#         counted_words[word] = counted_words.get(word, 0) +1
+#     return counted_words
+
+# print(word_counter(sent))
+
+
