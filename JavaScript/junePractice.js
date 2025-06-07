@@ -124,4 +124,46 @@ let word2 = 'goodbye'
 // console.log(addToEach([1, 2, 3], 5)); 
 // // Expected Output: [6, 7, 8]
 
+/* .filter()
+is used to select only the items in array that meet a condition. 
+does not modify original array - returns a new one 
 
+syntax = array.filter(callbackFunction)
+    - the callbackFunction runs once for each item
+    - it should return True to keep, false to drop
+*/
+
+// const nums = [1, 2, 3, 4, 5]
+
+// const evens = nums.filter(num => num % 2 === 0)
+
+// console.log(evens)
+
+// copy drill
+// const numbers = [2, 3, 5, 6, 9, 11, 12, 14, 18]
+
+// const divisibileBy3 = numbers.filter(num => num % 3 === 0)
+// console.log(divisibileBy3)
+// const div3 = numbers.filter(num => num % 3 === 0)
+// console.log(div3)
+// let div3 = numbers.filter(num => num % 3 === 0)
+// console.log(div3)
+// var divisibileBy3 = numbers.filter(num => num % 3 === 0)
+// console.log(divisibileBy3)
+// let divideBy3 = numbers.filter(num => num % 3 === 0)
+// console.log(divideBy3)
+
+
+// const – can’t be reassigned, best for values that won’t change
+
+// let – block-scoped, can be reassigned
+
+// var – function-scoped (older, usually avoid unless needed)
+
+// All of these work for filter() — so this was a great quick drill to reinforce how .filter() returns a new array and how different variable declarations behave.
+
+// filter numbers greater than 10 and even
+const numbers = [4, 8, 10, 13, 16, 19, 22];
+
+let greater10AndEven = numbers.filter(num => num > 10 && num % 2 === 0)
+console.log(greater10AndEven)

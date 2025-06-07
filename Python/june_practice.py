@@ -43,13 +43,62 @@
 
 # # print(sent_reversed(sentence))
 
-# 🐍 Python Challenge: Count the Vowels
-# Prompt:
-# Write a function that takes a string and returns the number of vowels 
-# (a, e, i, o, u) in it.
+# .filter()
 
-def count_vowels(words):
-    for 
+# .filter() is used to selec only the items in a list that meets a condition.
+# it doesn't modify the original list - it returns a new one. 
+# filter(function, iterable)
 
+# nums = [1, 2, 3, 4, 5]
 
-    
+# evens = list(filter(lambda num: num % 2 == 0, nums))
+
+# lambda num: num % 2 == 0 
+# This is an anonymous function (a Lambda function). it means:
+#   - for each num in the list, check if its evenly divisible by 2
+
+# filter(....)
+# a function (lambda num: num % 2 ==0)
+# an iterable (nums)
+
+# list(.....)
+# wrap the whole filter() call in list() to turn the result in a proper list to use or print
+
+# print(evens)
+
+# | Part           | Meaning                                 |
+# | -------------- | --------------------------------------- |
+# | `lambda num:`  | anonymous function that takes `num`     |
+# | `num % 2 == 0` | returns `True` if `num` is even         |
+# | `filter(...)`  | applies function to each item in `nums` |
+# | `list(...)`    | converts the result to a list           |
+
+# copy drill
+
+# numbers = [4, 7, 10, 13, 16, 19, 22]
+
+#using filter with lambda
+# even_numbers_filter = list(filter(lambda num: num % 2 == 0, numbers))
+# print (even_numbers_filter)
+# even_numbers_filter = list(filter(lambda num: num % 2 == 0, numbers))
+# print(even_numbers_filter)
+# even_numbers_filter = list(filter(lambda num: num % 2 == 0, numbers))
+# print(even_numbers_filter)
+# even_numbers_filter = list(filter(lambda num: num % 2 == 0, numbers))
+# print(even_numbers_filter)
+# even_numbers_filter = list(filter(lambda num: num % 2 == 0, numbers))
+# print(even_numbers_filter)
+
+# list comp way (refractered)
+# even_numbers_comp = [x for x in numbers if x % 2 == 0]
+# print("Even numbers (list comp):", even_numbers_comp)
+
+# # return numbers divisible by 3
+# numbers = [2, 3, 5, 6, 9, 11, 12, 14, 18]
+
+# divis_by_3 = list(filter(lambda num: num % 3 == 0, numbers))
+# print(divis_by_3)
+
+# #new var = [var for loop in list if var % 3 == 0]
+# divis_3 = [x for x in numbers if x % 3 ==0]
+# print(divis_3)
